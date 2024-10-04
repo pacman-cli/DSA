@@ -8,6 +8,7 @@ class Stack
     queue<int> q;
 
 public:
+    Stack() {}
     bool isEmpty()
     {
         return q.empty();
