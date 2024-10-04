@@ -4,76 +4,99 @@ using namespace std;
 
 class Stack
 {
-    int n, top;
-    int *s;
+  int n, top;
+  int *s;
 
 public:
-    Stack()
+  Stack()
+  {
+    n = 4;
+    top = -1;
+    s = new int[n]; // memory allocate
+  }
+  Stack(int n)
+  {
+    this->n = n;
+    top = -1;
+    s = new int[n];
+  }
+  int isEmpty()
+  {
+    if (top == -1)
+      return 1;
+    else
+      return 0;
+  }
+  int isFull()
+  {
+    if (top == n - 1)
+      return 1;
+    else
+      return 0;
+  }
+  void push(int x)
+  {
+    if (isFull())
     {
-        n = 4;
-        top = -1;
-        s = new int[n]; // memory allocate
+      // stack is full
+      cout << "stack is full" << endl;
     }
-    Stack(int n)
+    else
     {
-        this->n = n;
-        top = -1;
-        s = new int[n];
+      top++;
+      s[top] = x;
     }
-    int isEmpty()
+  }
+  int pop()
+  {
+    if (isEmpty())
     {
-        if (top == -1)
-            return 1;
-        else
-            return 0;
+      cout << "stack is empty" << endl;
+      return INT_MAX;
     }
-    int isFull()
+    else
     {
-        if (top == n - 1)
-            return 1;
-        else
-            return 0;
+      int y = s[top];
+      top--;
+      return y;
     }
-    void push(int x)
+  }
+  void display()
+  {
+    if (isEmpty())
     {
-        if (isFull())
-        {
-            // stack is full
-            cout << "stack is full" << endl;
-        }
-        else
-        {
-            top++;
-            s[top] = x;
-        }
+      cout << "stack is empty!" << endl;
+      return;
     }
-    int pop()
+
+    cout << "Stack: ";
+    int i = top;
+    while (true)
     {
-        if (isEmpty())
-        {
-            cout << "stack is empty" << endl;
-            return INT_MAX;
-        }
-        else
-        {
-            int y = s[top];
-            top--;
-            return y;
-        }
+      cout << s[i] << " ";
+      if (i == -1)
+        break;
+      i--;
     }
+    cout << endl;
+  }
 };
 
 int main()
 {
-    Stack s1;
-    Stack s2(3);
-    s1.push(3);
-    s1.push(31);
-    s1.push(13);
-    s1.push(32);
-    s1.push(35);
-    while (!s1.isEmpty())
-    {
-        cout << s1.pop() << endl;
-    }
+  Stack s1;
+  Stack s2(3);
+  s1.push(3);
+  s1.push(31);
+  s1.push(13);
+  s1.push(32);
+  s1.push(35);
+  cout << "before poping:";
+  s1.display();
+  while (!s1.isEmpty())
+  {
+    cout << s1.pop() << endl;
+  }
+  cout << "after poping:";
+  s1.display();
 }
