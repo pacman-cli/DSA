@@ -1,45 +1,40 @@
 #include <iostream>
 using namespace std;
 
+// Function to count the minimum operations to make n zero
+int minOperations(int n, int k) {
+  int operations = 0;
+
+  // Edge case for k == 1, since we can only subtract 1 (k^0 = 1)
+  if (k == 1) {
+    return n; // We need exactly n operations
+  }
+
+  // Continue subtracting the largest power of k
+  while (n > 0) {
+    // Find the largest power of k that is <= n
+    long long power = 1;
+    while (power * k <= n) {
+      power *= k;
+    }
+    // Subtract that power from n
+    n -= power;
+    // Increment the operation count
+    operations++;
+  }
+
+  return operations;
+}
+
 int main() {
   int t;
   cin >> t; // Number of test cases
 
-  // Declare an array to store results for each test case
-  int results[t];
-
   // Process each test case
-  for (int i = 0; i < t; i++) {
-    long long n, k;
+  while (t--) {
+    int n, k;
     cin >> n >> k;
-
-    int operations = 0;
-
-    // Special case when k == 1
-    if (k == 1) {
-      operations = n; // We need exactly n operations to reduce it to 0
-    } else {
-      // General case when k > 1
-      while (n > 0) {
-        // If remainder of n / k is non-zero, count it as an operation
-        operations += n % k; // Count non-zero remainders as operations
-        // Reduce n by dividing it by k
-        n /= k;
-        // Add one operation for each division step
-        operations++;
-      }
-      // The final division brings n to 0, so no need to count the last
-      // operation
-      operations--;
-    }
-
-    // Store the result in the array
-    results[i] = operations;
-  }
-
-  // Output all results
-  for (int i = 0; i < t; i++) {
-    cout << results[i] << endl;
+    cout << minOperations(n, k) << endl;
   }
 
   return 0;
