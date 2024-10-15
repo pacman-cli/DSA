@@ -2,38 +2,46 @@
 #include <iostream>
 using namespace std;
 
-class Stack {
+class Stack
+{
   int n, top;
   int *s;
 
 public:
-  Stack() {
+  Stack()
+  {
     n = 4;
     top = -1;
     s = new int[n];
   }
-  Stack(int n) {
+  Stack(int n)
+  {
     this->n = n;
     top = -1;
     s = new int[n];
   }
-  int isEmpty() {
+  int isEmpty()
+  {
     if (top == -1)
       return 1;
     else
       return 0;
   }
-  int isFull() {
+  int isFull()
+  {
     if (top == n - 1)
       return 1;
     else
       return 0;
   }
-  void push(int x) {
-    if (isFull()) {
+  void push(int x)
+  {
+    if (isFull())
+    {
       n += 2;
       int *temp = new int[n];
-      for (int i = 0; i <= top; i++) {
+      for (int i = 0; i <= top; i++)
+      {
         temp[i] = s[i];
       }
       s = temp;
@@ -43,11 +51,15 @@ public:
     s[top] = x;
   }
 
-  int pop() {
-    if (isEmpty()) {
+  int pop()
+  {
+    if (isEmpty())
+    {
       cout << "stack is empty" << endl;
       return INT_MAX;
-    } else {
+    }
+    else
+    {
       int y = s[top];
       top--;
       return y;
@@ -55,7 +67,8 @@ public:
   }
 };
 
-int main() {
+int main()
+{
   Stack s1;
   Stack s2(3);
   s1.push(3);
@@ -63,7 +76,8 @@ int main() {
   s1.push(13);
   s1.push(32);
   s1.push(35);
-  while (!s1.isEmpty()) {
+  while (!s1.isEmpty())
+  {
     cout << s1.pop() << endl;
   }
 }
