@@ -6,7 +6,8 @@ using namespace std;
 #define gray 2
 #define black 3
 
-class Graph {
+class Graph
+{
   int nVertices;
   int **matrix;
   bool directed; // directed->true, undirected->false
@@ -14,15 +15,18 @@ class Graph {
   int *start, *finish, time;
 
 public:
-  Graph(int n, bool dir) {
+  Graph(int n, bool dir)
+  {
     nVertices = n;
     directed = dir;
     matrix = new int *[n]; // stores the address of each row
     for (int i = 0; i < n; i++)
       matrix[i] = new int[n]; // each row contains n integers
     // initialize all cells with 0
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
+    for (int i = 0; i < n; i++)
+    {
+      for (int j = 0; j < n; j++)
+      {
         matrix[i][j] = 0;
       }
     }
@@ -32,12 +36,14 @@ public:
     start = new int[n];
     finish = new int[n];
     time = 0;
-    for (int i = 0; i < nVertices; i++) {
+    for (int i = 0; i < nVertices; i++)
+    {
       parent[i] = -1;
     }
   }
 
-  void addEdge(int u, int v) {
+  void addEdge(int u, int v)
+  {
     if (u < 0 || v < 0 || u >= nVertices || v >= nVertices)
       return;
 
@@ -46,7 +52,8 @@ public:
       matrix[v][u] = 1;
   }
 
-  bool isEdge(int u, int v) {
+  bool isEdge(int u, int v)
+  {
     if (u < 0 || v < 0 || u >= nVertices || v >= nVertices)
       return false;
     if (matrix[u][v] == 1)
@@ -55,12 +62,16 @@ public:
       return false;
   }
 
-  void display() {
+  void display()
+  {
     cout << "Displaying Graph:" << endl;
-    for (int u = 0; u < nVertices; u++) {
+    for (int u = 0; u < nVertices; u++)
+    {
       cout << u << " : ";
-      for (int v = 0; v < nVertices; v++) {
-        if (isEdge(u, v)) {
+      for (int v = 0; v < nVertices; v++)
+      {
+        if (isEdge(u, v))
+        {
           cout << v << ", ";
         }
       }
@@ -69,49 +80,61 @@ public:
   }
 
   // This function will print path from source to destination
-  void printPath(int src, int dest) {
+  void printPath(int src, int dest)
+  {
     int d = dest;
     stack<int> s;
-    while (d != -1) {
+    while (d != -1)
+    {
       s.push(d);
       d = parent[d];
     }
     cout << "Printing path" << "(" << src << "," << dest << "):";
-    while (!s.empty()) {
+    while (!s.empty())
+    {
       d = s.top();
       s.pop();
       cout << d;
-      if (!s.empty()) {
+      if (!s.empty())
+      {
         cout << "->";
       }
     }
     cout << endl;
   }
 
-  void DFS() {
-    for (int u = 0; u < nVertices; u++) { // Start from vertex 0
+  void DFS()
+  {
+    for (int u = 0; u < nVertices; u++)
+    {
       parent[u] = -1;
       color[u] = white;
     }
     time = 0;
-    for (int u = 0; u < nVertices; u++) {
-      if (color[u] == white) {
+    for (int u = 0; u < nVertices; u++)
+    {
+      if (color[u] == white)
+      {
         DFS_visit(u);
       }
     }
 
     cout << "Vertex\tStart\tFinish" << endl;
-    for (int u = 0; u < nVertices; u++) {
+    for (int u = 0; u < nVertices; u++)
+    {
       cout << u << "\t" << start[u] << "\t" << finish[u] << endl;
     }
   }
 
-  void DFS_visit(int u) {
+  void DFS_visit(int u)
+  {
     color[u] = gray;
     time += 1;
     start[u] = time;
-    for (int v = 0; v < nVertices; v++) {
-      if (matrix[u][v] == 1 && color[v] == white) {
+    for (int v = 0; v < nVertices; v++)
+    {
+      if (matrix[u][v] == 1 && color[v] == white)
+      {
         parent[v] = u;
         DFS_visit(v);
       }
@@ -122,7 +145,8 @@ public:
   }
 };
 
-int main() {
+int main()
+{
   Graph g(9, false);
 
   g.addEdge(0, 1);
