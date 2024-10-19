@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-class Graph {
+class Graph
+{
   int nVertices; // Number of vertices in the graph
   int **matrix;  // 2D array to represent the adjacency matrix
   bool directed; // Boolean to check if the graph is directed or undirected
 
 public:
   // Constructor to initialize the graph
-  Graph(int n, bool dir) {
+  Graph(int n, bool dir)
+  {
     nVertices = n;  // Set the number of vertices
     directed = dir; // Set whether the graph is directed or undirected
     matrix = new int
@@ -20,8 +22,10 @@ public:
           new int[n]; // Each row points to an array of size n (for columns)
 
     // Initialize all cells in the matrix to 0 (no edges initially)
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
+    for (int i = 0; i < n; i++)
+    {
+      for (int j = 0; j < n; j++)
+      {
         matrix[i][j] =
             0; // Set matrix[i][j] to 0 (no edge between vertices i and j)
       }
@@ -29,7 +33,8 @@ public:
   }
 
   // Method to add an edge between two vertices u and v
-  void addEdge(int u, int v) {
+  void addEdge(int u, int v)
+  {
     // Check for invalid vertices (negative or out of bounds)
     if (u < 0 || v < 0 || u >= nVertices || v >= nVertices)
       return; // If invalid, return without adding the edge
@@ -40,7 +45,8 @@ public:
   }
 
   // Method to check if there's an edge between two vertices u and v
-  bool isEdge(int u, int v) {
+  bool isEdge(int u, int v)
+  {
     // Check for invalid vertices
     if (u < 0 || v < 0 || u >= nVertices || v >= nVertices)
       return false; // If invalid, return false (no edge)
@@ -53,14 +59,18 @@ public:
   }
 
   // Method to display the adjacency list representation of the graph
-  void display() {
+  void display()
+  {
     cout << "Displaying Graph:" << endl;
     // Loop through all vertices
-    for (int u = 0; u < nVertices; u++) {
+    for (int u = 0; u < nVertices; u++)
+    {
       cout << u << " : "; // Print the vertex u
       // Loop through all other vertices to check if there's an edge
-      for (int v = 0; v < nVertices; v++) {
-        if (isEdge(u, v)) {  // If an edge exists from u to v
+      for (int v = 0; v < nVertices; v++)
+      {
+        if (isEdge(u, v))
+        {                    // If an edge exists from u to v
           cout << v << ", "; // Print vertex v
         }
       }
@@ -69,7 +79,8 @@ public:
   }
 };
 
-int main() {
+int main()
+{
   Graph g(5, false); // Create an undirected graph with 5 vertices
 
   // Add edges between the specified vertices
