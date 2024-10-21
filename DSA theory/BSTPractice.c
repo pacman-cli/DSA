@@ -2,15 +2,13 @@
 #include <stdlib.h>
 
 // Define a structure for Binary Search Tree node
-struct BinarySearchTree
-{
+struct BinarySearchTree {
   int key;
   struct BinarySearchTree *left, *right;
 };
 
 // Create a new node with the given value
-struct BinarySearchTree *createNewNode(int value)
-{
+struct BinarySearchTree *createNewNode(int value) {
   struct BinarySearchTree *node =
       (struct BinarySearchTree *)malloc(sizeof(struct BinarySearchTree));
   node->right = node->left = NULL;
@@ -19,28 +17,21 @@ struct BinarySearchTree *createNewNode(int value)
 }
 
 // Insert a node with a specific value in the tree
-struct BinarySearchTree *insertNode(struct BinarySearchTree *node, int value)
-{
-  if (node == NULL)
-  {
+struct BinarySearchTree *insertNode(struct BinarySearchTree *node, int value) {
+  if (node == NULL) {
     return createNewNode(value);
   }
-  if (value < node->key)
-  {
+  if (value < node->key) {
     node->left = insertNode(node->left, value);
-  }
-  else if (value >= node->key)
-  {
+  } else if (value >= node->key) {
     node->right = insertNode(node->right, value);
   }
   return node;
 }
 
 // Function to perform in-order traversal (sorted order)
-void inOrder(struct BinarySearchTree *root)
-{
-  if (root != NULL)
-  {
+void inOrder(struct BinarySearchTree *root) {
+  if (root != NULL) {
     inOrder(root->left);
     printf("%d ", root->key);
     inOrder(root->right);
@@ -48,10 +39,8 @@ void inOrder(struct BinarySearchTree *root)
 }
 
 // Function to perform pre-order traversal
-void preOrder(struct BinarySearchTree *root)
-{
-  if (root != NULL)
-  {
+void preOrder(struct BinarySearchTree *root) {
+  if (root != NULL) {
     printf("%d ", root->key);
     preOrder(root->left);
     preOrder(root->right);
@@ -59,10 +48,8 @@ void preOrder(struct BinarySearchTree *root)
 }
 
 // Function to perform post-order traversal
-void postOrder(struct BinarySearchTree *root)
-{
-  if (root != NULL)
-  {
+void postOrder(struct BinarySearchTree *root) {
+  if (root != NULL) {
     postOrder(root->left);
     postOrder(root->right);
     printf("%d ", root->key);
@@ -70,57 +57,45 @@ void postOrder(struct BinarySearchTree *root)
 }
 
 // Function to search for a node with a specific key in the tree
-struct BinarySearchTree *searchNode(struct BinarySearchTree *root, int target)
-{
-  if (root == NULL || root->key == target)
-  {
+struct BinarySearchTree *searchNode(struct BinarySearchTree *root, int target) {
+  if (root == NULL || root->key == target) {
     return root;
   }
-  if (root->key < target)
-  {
+  if (root->key < target) {
     return searchNode(root->right, target);
   }
   return searchNode(root->left, target);
 }
 
 // Function to find the minimum value node in the tree
-struct BinarySearchTree *findMin(struct BinarySearchTree *root)
-{
-  if (root == NULL)
-  {
+struct BinarySearchTree *findMin(struct BinarySearchTree *root) {
+  if (root == NULL) {
     return NULL;
   }
-  while (root->left != NULL)
-  {
+  while (root->left != NULL) {
     root = root->left;
   }
   return root;
 }
 
 // Function to find the maximum value node in the tree
-struct BinarySearchTree *findMax(struct BinarySearchTree *root)
-{
-  if (root == NULL)
-  {
+struct BinarySearchTree *findMax(struct BinarySearchTree *root) {
+  if (root == NULL) {
     return NULL;
   }
-  while (root->right != NULL)
-  {
+  while (root->right != NULL) {
     root = root->right;
   }
   return root;
 }
 
 // Function to find the second minimum value node in the tree
-struct BinarySearchTree *findSecondMin(struct BinarySearchTree *root)
-{
-  if (root == NULL || root->left == NULL)
-  {
+struct BinarySearchTree *findSecondMin(struct BinarySearchTree *root) {
+  if (root == NULL || root->left == NULL) {
     return NULL;
   }
   struct BinarySearchTree *parent = NULL;
-  while (root->left != NULL)
-  {
+  while (root->left != NULL) {
     parent = root;
     root = root->left;
   }
@@ -128,15 +103,12 @@ struct BinarySearchTree *findSecondMin(struct BinarySearchTree *root)
 }
 
 // Function to find the second maximum value node in the tree
-struct BinarySearchTree *findSecondMax(struct BinarySearchTree *root)
-{
-  if (root == NULL || root->right == NULL)
-  {
+struct BinarySearchTree *findSecondMax(struct BinarySearchTree *root) {
+  if (root == NULL || root->right == NULL) {
     return NULL;
   }
   struct BinarySearchTree *parent = NULL;
-  while (root->right != NULL)
-  {
+  while (root->right != NULL) {
     parent = root;
     root = root->right;
   }
@@ -144,41 +116,27 @@ struct BinarySearchTree *findSecondMax(struct BinarySearchTree *root)
 }
 
 // Function to delete a node from the tree
-struct BinarySearchTree *deleteNode(struct BinarySearchTree *root, int key)
-{
-  if (root == NULL)
-  {
+struct BinarySearchTree *deleteNode(struct BinarySearchTree *root, int key) {
+  if (root == NULL) {
     return NULL;
   }
-  if (key < root->key)
-  {
+  if (key < root->key) {
     root->left = deleteNode(root->left, key);
-  }
-  else if (key > root->key)
-  {
+  } else if (key > root->key) {
     root->right = deleteNode(root->right, key);
-  }
-  else
-  {
-    if (root->left == NULL && root->right == NULL)
-    {
+  } else {
+    if (root->left == NULL && root->right == NULL) {
       free(root);
       return NULL;
-    }
-    else if (root->left == NULL)
-    {
+    } else if (root->left == NULL) {
       struct BinarySearchTree *temp = root->right;
       free(root);
       return temp;
-    }
-    else if (root->right == NULL)
-    {
+    } else if (root->right == NULL) {
       struct BinarySearchTree *temp = root->left;
       free(root);
       return temp;
-    }
-    else
-    {
+    } else {
       struct BinarySearchTree *temp = findMin(root->right);
       root->key = temp->key;
       root->right = deleteNode(root->right, temp->key);
@@ -188,15 +146,13 @@ struct BinarySearchTree *deleteNode(struct BinarySearchTree *root, int key)
 }
 
 // Function to update a node (delete and insert a new value)
-void updateNode(struct BinarySearchTree **root, int oldKey, int newKey)
-{
+void updateNode(struct BinarySearchTree **root, int oldKey, int newKey) {
   *root = deleteNode(*root, oldKey); // Delete the node with oldKey
   *root = insertNode(*root, newKey); // Insert a new node with newKey
 }
 
 // Display the menu for user interaction
-void displayMenu()
-{
+void displayMenu() {
   printf("\n--- Binary Search Tree Menu ---\n");
   printf("1. Insert\n");
   printf("2. In-order Traversal (Sorting)\n");
@@ -213,19 +169,16 @@ void displayMenu()
   printf("-------------------------------\n");
 }
 
-int main()
-{
+int main() {
   struct BinarySearchTree *root = NULL;
   int choice, value, oldKey, newKey;
 
-  while (1)
-  {
+  while (1) {
     displayMenu();
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
-    switch (choice)
-    {
+    switch (choice) {
     case 1:
       printf("Enter value to insert: ");
       scanf("%d", &value);
@@ -249,37 +202,26 @@ int main()
     case 5:
       printf("Enter value to search: ");
       scanf("%d", &value);
-      if (searchNode(root, value) != NULL)
-      {
+      if (searchNode(root, value) != NULL) {
         printf("%d found in the tree.\n", value);
-      }
-      else
-      {
-        printf("%d not found in the tree.\n");
+      } else {
+        printf("%d not found in the tree.\n", value);
       }
       break;
-    case 6:
-    {
+    case 6: {
       struct BinarySearchTree *minNode = findMin(root);
-      if (minNode != NULL)
-      {
+      if (minNode != NULL) {
         printf("Minimum value: %d\n", minNode->key);
-      }
-      else
-      {
+      } else {
         printf("Tree is empty.\n");
       }
       break;
     }
-    case 7:
-    {
+    case 7: {
       struct BinarySearchTree *maxNode = findMax(root);
-      if (maxNode != NULL)
-      {
+      if (maxNode != NULL) {
         printf("Maximum value: %d\n", maxNode->key);
-      }
-      else
-      {
+      } else {
         printf("Tree is empty.\n");
       }
       break;
@@ -298,28 +240,20 @@ int main()
       root = deleteNode(root, value);
       printf("Node deleted.\n");
       break;
-    case 10:
-    {
+    case 10: {
       struct BinarySearchTree *secondMinNode = findSecondMin(root);
-      if (secondMinNode != NULL)
-      {
+      if (secondMinNode != NULL) {
         printf("Second minimum value: %d\n", secondMinNode->key);
-      }
-      else
-      {
+      } else {
         printf("Second minimum not found.\n");
       }
       break;
     }
-    case 11:
-    {
+    case 11: {
       struct BinarySearchTree *secondMaxNode = findSecondMax(root);
-      if (secondMaxNode != NULL)
-      {
+      if (secondMaxNode != NULL) {
         printf("Second maximum value: %d\n", secondMaxNode->key);
-      }
-      else
-      {
+      } else {
         printf("Second max not found.\n");
       }
       break;
