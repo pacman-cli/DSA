@@ -9,26 +9,22 @@ using namespace std;
 #define black 3
 #define inf INT_MAX
 
-class Graph
-{
+class Graph {
   int nVertices;
   int **matrix;
   bool directed;           // directed->true, undirected->false
   int *color, *d, *parent; // distace
 
 public:
-  Graph(int n, bool dir)
-  {
+  Graph(int n, bool dir) {
     nVertices = n;
     directed = dir;
     matrix = new int *[n]; // stores the address of each row //allocate
     for (int i = 0; i < n; i++)
       matrix[i] = new int[n]; // each row contains n integers
     // initialize all cell with 0
-    for (int i = 0; i < n; i++)
-    {
-      for (int j = 0; j < n; j++)
-      {
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
         matrix[i][j] = 0;
       }
     }
@@ -37,8 +33,7 @@ public:
     parent = new int[n];
   }
 
-  void addEdge(int u, int v)
-  {
+  void addEdge(int u, int v) {
     if (u < 0 || v < 0 || u >= nVertices ||
         v >= nVertices) // to check invalid edge or not
       return;
@@ -48,8 +43,7 @@ public:
       matrix[v][u] = 1;
   }
 
-  bool isEdge(int u, int v)
-  {
+  bool isEdge(int u, int v) {
     if (u < 0 || v < 0 || u >= nVertices || v >= nVertices)
       return false;
     if (matrix[u][v] == 1)
@@ -57,16 +51,12 @@ public:
     return false;
   }
 
-  void display()
-  {
+  void display() {
     cout << "Displaying Graph:" << endl;
-    for (int u = 0; u < nVertices; u++)
-    {
+    for (int u = 0; u < nVertices; u++) {
       cout << u << " : ";
-      for (int v = 0; v < nVertices; v++)
-      {
-        if (isEdge(u, v))
-        {
+      for (int v = 0; v < nVertices; v++) {
+        if (isEdge(u, v)) {
           cout << v << ", ";
         }
       }
@@ -74,10 +64,8 @@ public:
     }
   }
 
-  void BFS(int src)
-  {
-    for (int i = 0; i < nVertices; i++)
-    {
+  void BFS(int src) {
+    for (int i = 0; i < nVertices; i++) {
       color[i] = white;
       d[i] = inf; // distance from src
       parent[i] = -1;
@@ -88,16 +76,12 @@ public:
     queue<int> q;
     q.push(src);
 
-    while (!q.empty())
-    {
+    while (!q.empty()) {
       int u = q.front();
       q.pop();
-      for (int v = 0; v < nVertices; v++)
-      {
-        if (isEdge(u, v))
-        {
-          if (color[v] == white)
-          {
+      for (int v = 0; v < nVertices; v++) {
+        if (isEdge(u, v)) {
+          if (color[v] == white) {
             q.push(v);
             parent[v] = u;
             d[v] = d[u] + 1;
@@ -111,34 +95,27 @@ public:
         cout<<i<<"->d:"<<d[i]<<" p:"<<parent[i]<<endl;
     }*/
   }
-  void printPath(int src, int dest)
-  {
+  void printPath(int src, int dest) {
     int d = dest;
     stack<int> s;
-    while (d != -1)
-    {
+    while (d != -1) {
       s.push(d);
       d = parent[d];
     }
 
-    while (!s.empty())
-    {
+    while (!s.empty()) {
       d = s.top();
       s.pop();
       cout << d << "->";
     }
     cout << endl;
   }
-  void path(int src, int dest)
-  {
+  void path(int src, int dest) {
     BFS(src);
 
-    if (d[dest] == inf)
-    {
+    if (d[dest] == inf) {
       cout << "no path exists between " << src << " and " << dest << endl;
-    }
-    else
-    {
+    } else {
       cout << "distance from " << src << " to " << dest << ":" << d[dest]
            << endl;
       printPath(src, dest);
@@ -146,8 +123,7 @@ public:
   }
 };
 
-int main()
-{
+int main() {
   Graph g(9, false);
 
   g.addEdge(0, 1);
