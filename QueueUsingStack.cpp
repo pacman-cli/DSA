@@ -3,7 +3,8 @@
 #include <stack>
 using namespace std;
 
-class Queue {
+class Queue
+{
   stack<int> s; // Using one stack to implement the queue
 
 public:
@@ -16,8 +17,10 @@ public:
   bool isEmpty() { return s.empty(); }
 
   // Dequeue operation using recursion
-  int dequeue() {
-    if (isEmpty()) {
+  int dequeue()
+  {
+    if (isEmpty())
+    {
       cout << "Queue is empty" << endl;
       return INT_MAX;
     }
@@ -27,7 +30,8 @@ public:
     s.pop();
 
     // If it's the last element, return it (base case)
-    if (s.empty()) {
+    if (s.empty())
+    {
       return topElement;
     }
 
@@ -41,7 +45,8 @@ public:
   }
 };
 
-int main() {
+int main()
+{
   Queue q;
   q.enqueue(12);
   q.enqueue(23);

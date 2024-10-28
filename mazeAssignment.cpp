@@ -36,7 +36,8 @@ using namespace std;
 int N;
 int pathLength = -1;
 
-class Path {
+class Path
+{
 public:
   int x, y;
 };
@@ -45,20 +46,24 @@ Path path[25];
 int shortestPath = 0;
 
 string s;
-void findPath() {
-  if (shortestPath == 0 || pathLength < shortestPath) {
+void findPath()
+{
+  if (shortestPath == 0 || pathLength < shortestPath)
+  {
     s = "";
     shortestPath = pathLength;
   }
 
   // cout << "____________ RUNNING _____________ " << nl;
 
-  for (int i = 0; i < pathLength; i++) {
+  for (int i = 0; i < pathLength; i++)
+  {
     string sp = "(" + to_string(path[pathLength].x) + ", " +
                 to_string(path[pathLength].y) + "), ";
     s += (sp);
     cout << "(" << path[i].x << ", " << path[i].y << ") -> ";
-    if (i == pathLength - 1) {
+    if (i == pathLength - 1)
+    {
       // cout<<" last case handle is ok "<<nl;
       cout << "(" << path[pathLength].x << ", " << path[pathLength].y << ") ";
     }
@@ -69,7 +74,8 @@ void findPath() {
 int visited[100][100] = {0};
 bool inHandTreasure = false;
 
-void dfs(int maze[100][100], int row, int col) {
+void dfs(int maze[100][100], int row, int col)
+{
   // base case
   if (row < 0 || row > N - 1 || col < 0 || col > N - 1)
     return;
@@ -87,8 +93,10 @@ void dfs(int maze[100][100], int row, int col) {
   if (maze[row][col] == 3)
     inHandTreasure = true; // found
 
-  if (maze[row][col] == 2) {
-    if (inHandTreasure == true) {
+  if (maze[row][col] == 2)
+  {
+    if (inHandTreasure == true)
+    {
       // cout << "____________________________ yess _____________ " << nl;
       cout << "Path with treasure: ";
       findPath();
@@ -119,12 +127,14 @@ void dfs(int maze[100][100], int row, int col) {
 }
 
 void find_paths_with_treasures(int maze[100][100], int start_row,
-                               int start_col) {
+                               int start_col)
+{
   // string shortestPath;
   dfs(maze, start_row, start_col); // searching
 }
 
-int main() {
+int main()
+{
   cout << "Give maze size: ";
   cin >> N;
   int maze[100][100];
@@ -140,9 +150,12 @@ int main() {
   cout << nl;
   find_paths_with_treasures(maze, start_row, start_col);
 
-  if (shortestPath == 0) {
+  if (shortestPath == 0)
+  {
     cout << "No path with treasure found!" << nl;
-  } else {
+  }
+  else
+  {
     cout << nl;
     cout << "Shortest path: ";
     cout << s << nl;
