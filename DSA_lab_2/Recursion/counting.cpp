@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int fibonacci(int n) {
+int fibonacci(int n)
+{
   // base case
-  if (n == 0 || n == 1) {
+  if (n == 0 || n == 1)
+  {
     return n;
   }
   // recursive case
@@ -11,22 +13,27 @@ int fibonacci(int n) {
   return ans;
 }
 
-int power(int a) {
+int power(int a)
+{
   // base case
-  if (a == 0) {
+  if (a == 0)
+  {
     return 1;
   }
   return 2 * power(a - 1);
 }
 
-int factorial(int n) {
-  if (n == 0) {
+int factorial(int n)
+{
+  if (n == 0)
+  {
     return 1;
   }
   return n * factorial(n - 1);
 }
 
-void print(int n) {
+void print(int n)
+{
   // base case
   if (n == 0)
     return;
@@ -35,7 +42,8 @@ void print(int n) {
   return print(n - 1);
 }
 
-void printHead(int n) {
+void printHead(int n)
+{
   // base case
   if (n == 0)
     return;
@@ -45,10 +53,12 @@ void printHead(int n) {
 
   cout << n << " ";
 }
-void reachHome(int src, int dest) {
+void reachHome(int src, int dest)
+{
   cout << "src:" << src << " dest:" << dest << endl;
   // base case
-  if (src == dest) {
+  if (src == dest)
+  {
     cout << "Reached Home" << endl;
     return;
   }
@@ -57,7 +67,8 @@ void reachHome(int src, int dest) {
   // recursive case
   reachHome(src, dest);
 }
-int main() {
+int main()
+{
   int n;
   cin >> n;
   cout << "Fibonacci: " << fibonacci(n) << endl;
