@@ -3,20 +3,17 @@
 using namespace std;
 
 // Structure to hold a pair of integers
-struct Pair
-{
+struct Pair {
     int a, b;  // a is denominator, b is numerator
 };
 
 // Comparison function that sorts based on b/a ratio
-bool comp2(Pair p1, Pair p2)
-{
+bool comp2(Pair p1, Pair p2) {
     // Compare ratios of b/a for each pair
     return (double)p1.b / p1.a < (double)p2.b / p2.a;
 }
 
-int main()
-{
+int main() {
     // Test array of pairs
     Pair arr[] = {{5, 100}, {3, 9}, {3, 12}, {1, 6}, {5, 5}, {8, 16}};
     int len = sizeof(arr) / sizeof(arr[0]);
@@ -25,12 +22,10 @@ int main()
     sort(arr, arr + len, comp2);
 
     // Print sorted array with ratios
-    for (int i = 0; i < len; i++)
-    {
-        cout << "a:" << arr[i].a << " " 
+    for (int i = 0; i < len; i++) {
+        cout << "a:" << arr[i].a << " "
              << "b:" << arr[i].b << " "
-             << "ratio:" << fixed << setprecision(2) 
-             << (double)arr[i].b / arr[i].a << " | ";
+             << "ratio:" << fixed << setprecision(2) << (double)arr[i].b / arr[i].a << " | ";
     }
     cout << endl;
     return 0;
