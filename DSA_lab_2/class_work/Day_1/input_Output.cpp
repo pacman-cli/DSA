@@ -1,9 +1,8 @@
 // This program demonstrates different ways to handle input/output in C++
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     // Method 1: Basic string input (stops at whitespace)
     char str[100];
     cout << "Enter a string (stops at space): ";
@@ -37,7 +36,7 @@ void multipleInputs() {
     int num;
     char ch;
     string word;
-    
+
     cout << "Enter number, character, and word: ";
     cin >> num >> ch >> word;
     cout << "Number: " << num << endl
