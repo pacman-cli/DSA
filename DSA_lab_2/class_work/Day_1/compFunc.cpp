@@ -1,5 +1,5 @@
 // This program demonstrates custom comparison function with sort
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 struct Pair {
     int a, b;  // 'a' is first element, 'b' is second element
