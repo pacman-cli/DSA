@@ -1,5 +1,5 @@
 // This program demonstrates sorting pairs based on ratios
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // Structure to hold a pair of integers

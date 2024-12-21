@@ -1,7 +1,6 @@
 // This program demonstrates various array sorting techniques in C++
 #include <iostream>
 #include <cstdio>
-#include <bits/stdc++.h>
 using namespace std;
 
 // Utility function to print array

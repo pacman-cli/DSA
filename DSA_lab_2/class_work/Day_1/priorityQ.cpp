@@ -3,22 +3,18 @@
 using namespace std;
 
 // Structure to hold a pair of integers
-struct Pair
-{
+struct Pair {
     int a, b;
 };
 
 // Custom comparator for sorting by 'a' value in descending order
-struct comp_a
-{
-    bool operator()(Pair const &p1, Pair const &p2)
-    {
+struct comp_a {
+    bool operator()(Pair const &p1, Pair const &p2) {
         return p1.a < p2.a;  // For max heap (largest a value has highest priority)
     }
 };
 
-int main()
-{
+int main() {
     // Create priority queue with custom comparator
     priority_queue<Pair, vector<Pair>, comp_a> Q;
 
@@ -32,15 +28,13 @@ int main()
     };
 
     // Push all pairs into priority queue
-    for (int i = 0; i < 5; ++i)
-    {
+    for (int i = 0; i < 5; ++i) {
         Q.push(arr[i]);
     }
 
     // Pop and print elements (will come out in order of decreasing 'a' values)
     cout << "Pairs in priority order (by 'a' value):" << endl;
-    while (!Q.empty())
-    {
+    while (!Q.empty()) {
         Pair p = Q.top();
         Q.pop();
         cout << "a:" << p.a << " b:" << p.b << endl;
@@ -96,18 +90,18 @@ priority_queue<Pair, vector<Pair>, comp_multi> multiQ;// Multi-level sort
 Example operations:
 void priorityQueueOperations() {
     priority_queue<Pair, vector<Pair>, comp_min> Q;
-    
+
     // Push elements
     Q.push({1, 2});
     Q.push({3, 4});
-    
+
     // Access top element
     Pair top = Q.top();
-    
+
     // Check size and emptiness
     int size = Q.size();
     bool isEmpty = Q.empty();
-    
+
     // Pop all elements
     while (!Q.empty()) {
         cout << Q.top().a << "," << Q.top().b << endl;

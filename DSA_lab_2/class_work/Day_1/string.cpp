@@ -2,8 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main() {
     // Method 1: Direct string initialization
     string str1 = "Hello World";
     cout << "String 1: " << str1 << endl;
@@ -31,12 +30,12 @@ int main()
     // String input demonstration
     string word, line;
     cout << "Enter a word: ";
-    cin >> word;              // Reads until whitespace
-    cin.sync();              // Clear buffer
+    cin >> word;  // Reads until whitespace
+    cin.sync();   // Clear buffer
     cout << "You entered: " << word << endl;
 
     cout << "Enter a line: ";
-    getline(cin, line);      // Reads entire line
+    getline(cin, line);  // Reads entire line
     cout << "You entered: " << line << endl;
 
     return 0;
@@ -47,19 +46,19 @@ int main()
 // Example 1: String operations
 void stringOperations() {
     string str = "Hello World";
-    
+
     // Substring
     string sub = str.substr(0, 5);  // "Hello"
-    
+
     // Find
     size_t pos = str.find("World");  // Returns 6
-    
+
     // Replace
     str.replace(6, 5, "C++");  // "Hello C++"
-    
+
     // Insert
     str.insert(5, " there");  // "Hello there World"
-    
+
     // Erase
     str.erase(5, 6);  // Removes " there"
 }
@@ -68,11 +67,11 @@ void stringOperations() {
 void stringComparison() {
     string s1 = "apple";
     string s2 = "banana";
-    
+
     bool less = s1 < s2;           // true
     bool equal = s1 == s2;         // false
     bool greater = s1 > s2;        // false
-    
+
     // Compare specific portion
     int result = s1.compare(0, 2, s2, 0, 2);
 }
@@ -80,13 +79,13 @@ void stringComparison() {
 // Example 3: String transformation
 void stringTransform() {
     string str = "Hello World";
-    
+
     // To uppercase
     transform(str.begin(), str.end(), str.begin(), ::toupper);
-    
+
     // To lowercase
     transform(str.begin(), str.end(), str.begin(), ::tolower);
-    
+
     // Reverse string
     reverse(str.begin(), str.end());
 }
@@ -96,7 +95,7 @@ void stringParsing() {
     string str = "123,456,789";
     stringstream ss(str);
     string token;
-    
+
     while (getline(ss, token, ',')) {
         cout << token << endl;
     }
@@ -108,7 +107,7 @@ void stringConversion() {
     string numStr = "123";
     int num = stoi(numStr);
     double dbl = stod("123.456");
-    
+
     // Number to string
     string str1 = to_string(123);
     string str2 = to_string(123.456);
