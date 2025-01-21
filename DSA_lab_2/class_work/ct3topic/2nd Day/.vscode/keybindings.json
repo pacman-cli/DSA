@@ -1,0 +1,7 @@
+[
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run C++ Program"
+    }
+]

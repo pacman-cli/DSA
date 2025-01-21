@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 string commonPrefixUtil(string &p1, string &p2) {
     string result;

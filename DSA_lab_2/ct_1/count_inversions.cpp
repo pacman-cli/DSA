@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
 #include <vector>
 using namespace std;
 long long merge(vector<int>& arr, int left, int mid, int right) {
