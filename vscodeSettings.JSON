@@ -1,0 +1,449 @@
+{
+  // Sets the color theme for the VS Code interface
+  "workbench.colorTheme": "Catppuccin Mocha",
+
+  // Controls the speed of autocomplete suggestions
+  "windsurf.autocompleteSpeed": "fast",
+
+  // Sets the font size for the editor
+  "editor.fontSize": 22,
+
+  // Enables word wrapping in the editor
+  "editor.wordWrap": "on",
+
+  // Enables the layout control feature
+  "workbench.layoutControl.enabled": true,
+
+  // Disables the minimap feature
+  "editor.minimap.enabled": false,
+
+  // Disables rendering characters in the minimap
+  "editor.minimap.renderCharacters": false,
+
+  // Sets the size of the minimap
+  "editor.minimap.size": "fill",
+
+  // Sets the cursor blinking style
+  "editor.cursorBlinking": "phase",
+
+  // Enables smooth caret animation
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  // Enables smooth scrolling
+  "editor.smoothScrolling": true,
+
+  // Enables smooth scrolling in lists
+  "workbench.list.smoothScrolling": true,
+
+  // Enables smooth scrolling in the terminal
+  "terminal.integrated.smoothScrolling": true,
+
+  // Enables bracket pair colorization
+  "editor.bracketPairColorization.enabled": true,
+
+  // Highlights active bracket pairs
+  "editor.guides.bracketPairs": "active",
+
+  // Highlights the active bracket pair
+  "editor.guides.highlightActiveBracketPair": true,
+
+  // Enables font ligatures
+  "editor.fontLigatures": true,
+
+  // Sets the font family for the editor
+  "editor.fontFamily": "'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+
+  // Sets the font weight for the editor
+  "editor.fontWeight": "450",
+
+  // Sets the location of the side bar
+  "workbench.sideBar.location": "left",
+
+  // Enables breadcrumbs
+  "breadcrumbs.enabled": true,
+
+  // Highlights the entire line when the cursor is on it
+  "editor.renderLineHighlight": "all",
+
+  // Highlights occurrences of the selected text
+  "editor.occurrencesHighlight": "singleFile",
+
+  // Renders whitespace characters in the selection
+  "editor.renderWhitespace": "selection",
+
+  // Ensures the code runs in VS Code's integrated terminal instead of an output panel
+  "code-runner.runInTerminal": true,
+
+  // Defines how to compile and run C++ files
+  "code-runner.executorMap": {
+    "cpp": "cd \"$dir\" && g++ -std=c++11 \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\""
+  },
+
+  // Automatically saves the file before running
+  "code-runner.saveFileBeforeRun": true,
+
+  // Clears previous output in terminal before each run
+  "code-runner.clearPreviousOutput": true,
+
+  // Sets the C++ language standard to C++14
+  "C_Cpp.default.cppStandard": "c++14",
+
+  // Sets up the include path for header files
+  "C_Cpp.default.includePath": ["${workspaceFolder}/**"],
+
+  // Specifies the path to the C++ compiler
+  "C_Cpp.default.compilerPath": "/usr/bin/g++",
+
+  // Sets the IntelliSense mode for macOS
+  "C_Cpp.default.intelliSenseMode": "macos-clang-x64",
+
+  // Customizes the token colors for comments
+  "editor.tokenColorCustomizations": {
+    "comments": "#8B949E"
+  },
+
+  // Sets the icon theme for the VS Code interface
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Sets the cursor style
+  "editor.cursorStyle": "line",
+
+  // Sets the line height for the editor
+  "editor.lineHeight": 1.6,
+
+  // Sets the ruler positions for the editor
+  "editor.rulers": [80, 100],
+
+  // Enables the glyph margin
+  "editor.glyphMargin": true,
+
+  // Enables semantic highlighting
+  "editor.semanticHighlighting.enabled": true,
+
+  // Sets the font size for the terminal
+  "terminal.integrated.fontSize": 16,
+
+  // Sets the font family for the terminal
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+
+  // Customizes the colors for the VS Code interface
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f",
+    "editorBracketMatch.background": "#363b4c",
+    "editorBracketMatch.border": "#5f85bb",
+    "tab.activeBorderTop": "#7c3aed",
+    "activityBar.background": "#1f1f2e",
+    "sideBar.background": "#1a1b26",
+    "editor.background": "#1a1b26",
+    "terminal.background": "#1a1b26",
+    "statusBar.background": "#5f85bb",
+    "titleBar.activeBackground": "#1f1f2e",
+    "commandCenter.background": "#1a1b2680",
+    "commandCenter.border": "#7c3aed40",
+    "commandCenter.foreground": "#ffffff",
+    "commandCenter.activeForeground": "#7c3aed",
+    "commandCenter.activeBackground": "#1f1f2e99",
+    "quickInput.background": "#1a1b2699",
+    "quickInput.foreground": "#ffffff",
+    "quickInputList.focusBackground": "#89b4fa",
+    "quickInputList.focusForeground": "#ffffff",
+    "quickInputTitle.background": "#1a1b2699",
+    "list.activeSelectionBackground": "#7c3aed99",
+    "list.activeSelectionForeground": "#ffffff",
+    "list.hoverBackground": "#1f1f2e99",
+    "list.hoverForeground": "#ffffff",
+    "commandCenter.inactiveForeground": "#ffffffcc",
+    "commandCenter.inactiveBorder": "#7c3aed20",
+    "titleBar.border": "#7c3aed40",
+    "statusBar.noFolderBackground": "#5f85bb",
+    "statusBar.debuggingBackground": "#5f85bb",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+
+  // Sets the title bar style
+  "window.titleBarStyle": "custom",
+
+  // Sets the top padding for the editor
+  "editor.padding.top": 20,
+
+  // Preserves the input in the command palette
+  "workbench.commandPalette.preserveInput": true,
+
+  // Enables the command center
+  "window.commandCenter": true,
+
+  // Sets the layout control type
+  "workbench.layoutControl.type": "menu",
+
+  // Sets the menu bar visibility
+  "window.menuBarVisibility": "compact",
+
+  // Sets the location of the activity bar
+  "workbench.activityBar.location": "top",
+
+  // Customizes the title bar overlay
+  "window.titleBarOverlay": {
+    "color": "#1a1b2699",
+    "height": 30
+  },
+
+  // Sets the suggestion selection behavior
+  "editor.suggestSelection": "first",
+
+  // Sets the behavior for accepting suggestions
+  "editor.acceptSuggestionOnEnter": "smart",
+
+  // Sets the tab size for the editor
+  "editor.tabSize": 4,
+
+  // Enables editor decorations
+  "workbench.editor.decorations.badges": true,
+
+  // Enables editor decorations for colors
+  "workbench.editor.decorations.colors": true,
+
+  // Sets the indentation for the tree view
+  "workbench.tree.indent": 12,
+
+  // Always renders indent guides in the tree view
+  "workbench.tree.renderIndentGuides": "always",
+
+  // Enables sticky scroll
+  "editor.stickyScroll.enabled": true,
+
+  // Enables sticky hover
+  "editor.hover.sticky": true,
+
+  // Enables inline suggestions
+  "editor.inlineSuggest.enabled": true,
+
+  // Customizes the quick suggestions
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
+
+  // Enables preview for suggestions
+  "editor.suggest.preview": true,
+
+  // Enables indentation guides
+  "editor.guides.indentation": true,
+
+  // Highlights active indentation
+  "editor.guides.highlightActiveIndentation": true,
+
+  // Sets the tab sizing behavior
+  "workbench.editor.tabSizing": "shrink",
+
+  // Disables wrapping tabs
+  "workbench.editor.wrapTabs": false,
+
+  // Sets the location of the tab close button
+  "workbench.editor.tabCloseButton": "right",
+
+  // Shows multiple tabs
+  "workbench.editor.showTabs": "multiple",
+
+  // Highlights modified tabs
+  "workbench.editor.highlightModifiedTabs": true,
+
+  // Disables custom menu bar alt focus
+  "window.customMenuBarAltFocus": false,
+
+  // Sets the density of the editor tab height
+  "window.density.editorTabHeight": "compact",
+
+  // Sets the default profile for the terminal on macOS
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // Enables GPU acceleration for the terminal
+  "terminal.integrated.gpuAcceleration": "on",
+
+  // Enables cursor blinking in the terminal
+  "terminal.integrated.cursorBlinking": true,
+
+  // Sets the cursor style for the terminal
+  "terminal.integrated.cursorStyle": "line",
+
+  // Sets the font weight for bold text in the terminal
+  "terminal.integrated.fontWeightBold": "600",
+
+  // Enables tabs in the terminal
+  "terminal.integrated.tabs.enabled": true,
+
+  // Sets the location of the terminal tabs
+  "terminal.integrated.tabs.location": "right",
+
+  // Sets the product icon theme
+  "workbench.productIconTheme": "material-product-icons",
+
+  // Hides the horizontal scrollbar
+  "editor.scrollbar.horizontal": "hidden",
+
+  // Hides the vertical scrollbar
+  "editor.scrollbar.vertical": "hidden",
+
+  // Disables the overview ruler border
+  "editor.overviewRulerBorder": false,
+
+  // Hides the cursor in the overview ruler
+  "editor.hideCursorInOverviewRuler": true,
+
+  // Vim core settings
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+
+  // Custom keybindings for insert mode
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"],
+      "description": "Quick escape from insert mode using 'jj'"
+    }
+  ],
+
+  // Custom keybindings for normal mode with documentation
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"],
+      "description": "Quick delete line with space+d"
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"],
+      "description": "Clear search highlighting with Ctrl+n"
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true,
+      "description": "Insert line break with K"
+    },
+    // Fast navigation
+    {
+      "before": ["<C-u>"],
+      "after": ["2", "0", "k"],
+      "description": "Move 20 lines up quickly"
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["2", "0", "j"],
+      "description": "Move 20 lines down quickly"
+    },
+    // Word selection shortcuts
+    {
+      "before": ["<leader>", "w"],
+      "after": ["v", "i", "w"],
+      "description": "Select inner word with space+w"
+    },
+    {
+      "before": ["<leader>", "W"],
+      "after": ["v", "a", "w"],
+      "description": "Select word with surrounding space using space+W"
+    },
+    // Sentence selection
+    {
+      "before": ["<leader>", "s"],
+      "after": ["v", "i", "s"],
+      "description": "Select inner sentence with space+s"
+    },
+    {
+      "before": ["<leader>", "S"],
+      "after": ["v", "a", "s"],
+      "description": "Select sentence with surrounding space using space+S"
+    },
+    // Quick comment toggles
+    {
+      "before": ["<leader>", "c", "c"],
+      "commands": ["editor.action.commentLine"],
+      "description": "Toggle line comment with space+cc"
+    },
+    {
+      "before": ["<leader>", "c", "b"],
+      "commands": ["editor.action.blockComment"],
+      "description": "Toggle block comment with space+cb"
+    }
+  ],
+
+  // Space as leader key for all custom shortcuts
+  "vim.leader": "<space>",
+
+  // Preserve some VS Code default shortcuts
+  "vim.handleKeys": {
+    "<C-a>": false, // Select all
+    "<C-f>": false, // Find
+    "<C-c>": false, // Copy
+    "<C-v>": false, // Paste
+    "<C-x>": false, // Cut
+    "<C-z>": false // Undo
+  },
+
+  // Additional Vim features
+  "vim.smartRelativeLine": true,
+  "vim.sneak": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  "vim.searchHighlightColor": "rgba(250, 240, 170, 0.5)",
+
+  // Status bar colors for different modes
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#1f1f2e",
+  "vim.statusBarColors.insert": "#7c3aed",
+  "vim.statusBarColors.visual": "#5f85bb",
+  "vim.statusBarColors.visualline": "#5f85bb",
+  "vim.statusBarColors.replace": "#f87171",
+
+  // Enable camelCase motion
+  "vim.camelCaseMotion.enable": true,
+
+  // Quick text object selections
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["i", "f"],
+      "after": ["i", "("],
+      "description": "Select text inside parentheses with if"
+    },
+    {
+      "before": ["i", "b"],
+      "after": ["i", "{"],
+      "description": "Select text inside curly braces with ib"
+    }
+  ],
+  "workbench.editor.tabActionLocation": "right",
+  "[dart]": {
+    // Enables format on save for Dart files
+    "editor.formatOnSave": true,
+
+    // Enables format on type for Dart files
+    "editor.formatOnType": true,
+
+    // Sets the ruler positions for Dart files
+    "editor.rulers": [80],
+
+    // Disables selection highlighting for Dart files
+    "editor.selectionHighlight": false,
+
+    // Enables tab completion for snippets only
+    "editor.tabCompletion": "onlySnippets",
+
+    // Disables word-based suggestions for Dart files
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[cpp]": { "editor.formatOnSave": true, "editor.formatOnType": true },
+  "[c]": { "editor.formatOnSave": true, "editor.formatOnType": true },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.settings.applyToAllProfiles": []
+}
+
