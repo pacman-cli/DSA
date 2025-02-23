@@ -26,11 +26,11 @@ int CoinChange(int M, vector<int> coins, int d) {
 
     // Backtrack to find which coins were used
     cout << "Coins: ";
-    for (int m = M; m > 0; ) {
+    for (int m = M; m > 0;) {
         for (int i = 0; i < d; i++) {
             if (mnc[m - coins[i]] + 1 == mnc[m]) {
                 cout << coins[i] << " ";  // Print the coin used
-                m -= coins[i];           // Reduce the amount by the coin value
+                m -= coins[i];            // Reduce the amount by the coin value
                 break;
             }
         }
@@ -44,12 +44,12 @@ int main() {
     cin >> M >> d;  // Input the target amount and the number of denominations
     vector<int> coins;
     for (int i = 1; i <= d; i++) {
-        cin >> x;          // Input the coin denominations
+        cin >> x;  // Input the coin denominations
         coins.push_back(x);
     }
     int totalcoins = CoinChange(M, coins, d);  // Call the function
     return 0;
 }
-//example
-//M=30
-//coins ={25,10,1}; here d = 3
+// example
+// M=30
+// coins ={25,10,1}; here d = 3

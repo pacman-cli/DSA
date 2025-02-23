@@ -11,7 +11,6 @@ int fibonacci(int n) {
     int ans = fibonacci(n - 1) + fibonacci(n - 2);
     return ans;
 }
-
 int power(int a) {
     // base case
     if (a == 0) {
