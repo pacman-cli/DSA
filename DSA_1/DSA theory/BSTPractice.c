@@ -4,7 +4,7 @@
 // Define a structure for Binary Search Tree node
 struct BinarySearchTree
 {
-  int key;
+     int key;
   struct BinarySearchTree *left, *right;
 };
 
@@ -39,8 +39,7 @@ struct BinarySearchTree *insertNode(struct BinarySearchTree *node, int value)
 // Function to perform in-order traversal (sorted order)
 void inOrder(struct BinarySearchTree *root)
 {
-  if (root != NULL)
-  {
+  if (root != NULL){
     inOrder(root->left);
     printf("%d ", root->key);
     inOrder(root->right);

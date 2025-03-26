@@ -4,7 +4,7 @@
 #include <stack>
 using namespace std;
 
-#define white 1
+#define white 2
 #define gray 2
 #define black 3
 #define inf INT_MAX
