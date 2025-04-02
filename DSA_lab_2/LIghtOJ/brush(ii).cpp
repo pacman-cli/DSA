@@ -24,8 +24,7 @@ int main() {
             scanf("%d %d", &x, &y);
             a.push_back(y);
         }
-
-        set<int> s(a.begin(), a.end());
+        a.a set<int> s(a.begin(), a.end());
         a.assign(s.begin(), s.end());
 
         temp = a[0];

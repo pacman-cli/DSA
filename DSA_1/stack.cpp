@@ -2,77 +2,61 @@
 #include <iostream>
 using namespace std;
 
-class Stack
-{
+class Stack {
   int n, top;
   int *s;
 
 public:
-  Stack()
-  {
+  Stack() {
     n = 4;
     top = -1;
     s = new int[n]; // memory allocate
   }
-  Stack(int n)
-  {
+  Stack(int n) {
     this->n = n;
     top = -1;
     s = new int[n];
   }
-  int isEmpty()
-  {
+  int isEmpty() {
     if (top == -1)
       return 1;
     else
       return 0;
   }
-  int isFull()
-  {
+  int isFull() {
     if (top == n - 1)
       return 1;
     else
       return 0;
   }
-  void push(int x)
-  {
-    if (isFull())
-    {
+  void push(int x) {
+    if (isFull()) {
       // stack is full
       cout << "stack is full" << endl;
-    }
-    else
-    {
+    } else {
       top++;
       s[top] = x;
     }
   }
-  int pop()
-  {
-    if (isEmpty())
-    {
+  int pop() {
+    if (isEmpty()) {
       cout << "stack is empty" << endl;
       return INT_MAX;
-    }
-    else
-    {
+    } else {
       int y = s[top];
       top--;
       return y;
     }
   }
-  void display()
-  {
-    if (isEmpty())
-    {
+  void display() {
+    if (isEmpty()) {
       cout << "stack is empty!" << endl;
       return;
     }
 
     cout << "Stack: ";
     int i = top;
-    while (true)
-    {
+    while (true) {
       cout << s[i] << " ";
       if (i == -1)
         break;
@@ -82,8 +66,7 @@ public:
   }
 };
 
-int main()
-{
+int main() {
   Stack s1;
   Stack s2(3);
   s1.push(3);
@@ -93,8 +76,7 @@ int main()
   s1.push(35);
   cout << "before poping:";
   s1.display();
-  while (!s1.isEmpty())
-  {
+  while (!s1.isEmpty()) {
     cout << s1.pop() << endl;
   }
   cout << "after poping:";

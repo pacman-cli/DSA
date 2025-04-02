@@ -22,6 +22,7 @@ This repository contains my implementation and learning journey of various Data 
 ## 💾 Data Structures
 
 - **Linear Data Structures**
+
   - Arrays
   - Linked Lists
   - Stacks
@@ -36,6 +37,7 @@ This repository contains my implementation and learning journey of various Data 
 ## ⚡ Algorithms
 
 - **Sorting**
+
   - Bubble Sort
   - Selection Sort
   - Insertion Sort
@@ -44,6 +46,7 @@ This repository contains my implementation and learning journey of various Data 
   - Heap Sort
 
 - **Searching**
+
   - Linear Search
   - Binary Search
   - Depth-First Search
@@ -57,6 +60,7 @@ This repository contains my implementation and learning journey of various Data 
 ## 🚀 Getting Started
 
 1. Clone the repository
+
    ```bash
    git clone https://github.com/spowrrr/DSA-lab.git
    ```
