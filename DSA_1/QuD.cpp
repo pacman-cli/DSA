@@ -42,6 +42,7 @@ public:
       }
       // capacity *= 2; // Update the capacity
       // delete[] arr;  // Delete the old array
+
       arr = newArr; // Point arr to the new array
     }
 

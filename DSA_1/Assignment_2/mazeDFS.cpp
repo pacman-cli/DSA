@@ -21,11 +21,9 @@ int pIdx = 0;
 bool found = false;
 int dfs_time = 0;
 
-void find_paths_with_treasures(int r, int c)
-{
+void find_paths_with_treasures(int r, int c) {
   if (r < 0 || r >= rows || c < 0 || c >= columns || maze[r][c] == 1 ||
-      visited[r][c] == 1)
-  {
+      visited[r][c] == 1) {
     return;
   }
 
@@ -35,24 +33,19 @@ void find_paths_with_treasures(int r, int c)
   pIdx++;
   dfs_time++;
 
-  if (maze[r][c] == 2)
-  {
+  if (maze[r][c] == 2) {
     bool foundTresure = false;
-    for (int i = 0; i < pIdx; i++)
-    {
-      if (maze[path[i][0]][path[i][1]] == 3)
-      {
+    for (int i = 0; i < pIdx; i++) {
+      if (maze[path[i][0]][path[i][1]] == 3) {
         foundTresure = true;
         break;
       }
     }
 
     // print path
-    if (foundTresure)
-    {
+    if (foundTresure) {
       cout << "Path with treasure: ";
-      for (int i = 0; i < pIdx; i++)
-      {
+      for (int i = 0; i < pIdx; i++) {
         cout << "(" << path[i][0] << "," << path[i][1] << ")";
         if (i != pIdx - 1)
           cout << "->";
@@ -76,12 +69,10 @@ void find_paths_with_treasures(int r, int c)
   visited[r][c] = 0;
 }
 
-int main()
-{
+int main() {
   find_paths_with_treasures(0, 0);
 
-  if (!found)
-  {
+  if (!found) {
     cout << "No path with treasure found." << endl;
   }
 

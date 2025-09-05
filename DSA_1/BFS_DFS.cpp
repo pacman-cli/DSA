@@ -8,7 +8,6 @@ using namespace std;
 #define gray 2
 #define black 3
 #define inf INT_MAX
-
 class Graph {
   int nVertices;
   int **matrix;
